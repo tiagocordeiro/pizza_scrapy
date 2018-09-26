@@ -5,18 +5,18 @@ import csv
 
 page = requests.get('https://vituccio.com')
 soup = BeautifulSoup(page.content, 'html.parser')
-itens = soup.find_all("ul", {"class": "pizza-flavers"})
+pizzas = soup.find_all("ul", {"class": "pizza-flavers"})
 
 file = csv.writer(open("pizzas.csv", "w"))
 file.writerow(["Name", "Description", "Price", "Image"])  # Write column headers as the first line
 
-for item in itens:
-    detalhes = item.find_all("li")
-    for item_detalhe in detalhes:
-        name = item_detalhe.find("h5")
-        description = item_detalhe.find("span")
-        price = item_detalhe.find("div", {"class": "pizza-price"})
-        image = item_detalhe.find("div", {"class": "menu-img"})
+for pizza in pizzas:
+    datails = pizza.find_all("li")
+    for item_details in datails:
+        name = item_details.find("h5")
+        description = item_details.find("span")
+        price = item_details.find("div", {"class": "pizza-price"})
+        image = item_details.find("div", {"class": "menu-img"})
         print(name.text)
         print(description.text)
         print(price.text)
@@ -24,5 +24,5 @@ for item in itens:
             print(image.contents[0].attrs['src'])
             file.writerow((name.text, description.text, price.text, image.contents[0].attrs['src']))
         else:
-            print("no image")
+            print("[NO IMAGE]")
             file.writerow((name.text, description.text, price.text, image))
