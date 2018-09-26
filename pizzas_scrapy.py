@@ -11,8 +11,8 @@ file = csv.writer(open("pizzas.csv", "w"))
 file.writerow(["Name", "Description", "Price", "Image"])  # Write column headers as the first line
 
 for pizza in pizzas:
-    datails = pizza.find_all("li")
-    for item_details in datails:
+    details = pizza.find_all("li")
+    for item_details in details:
         name = item_details.find("h5")
         description = item_details.find("span")
         price = item_details.find("div", {"class": "pizza-price"})
