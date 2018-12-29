@@ -2,6 +2,9 @@
 
 Exemplo simples de scraping com Python e BeautifulSoup 
 
+[![Updates](https://pyup.io/repos/github/tiagocordeiro/pizza_scrapy/shield.svg)](https://pyup.io/repos/github/tiagocordeiro/pizza_scrapy/)
+[![Python 3](https://pyup.io/repos/github/tiagocordeiro/pizza_scrapy/python-3-shield.svg)](https://pyup.io/repos/github/tiagocordeiro/pizza_scrapy/)
+
 ### Como usar
 
 1 - Clone o repositório
